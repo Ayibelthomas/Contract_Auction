@@ -1,0 +1,719 @@
+
+{% for message in messages %}
+  <script>
+    alert('{{message}}')
+  </script>
+{% endfor %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>AUCTION HUB</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/favicon.png' %}" rel="icon" />
+    <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i' %}" rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+
+    <style>
+#hero {
+    width: 100%;
+    height: calc(100vh - 1109px);
+    background: url(../img/auctimo.jpg) top center;
+    background-size: cover;
+    position: relative;
+}
+
+      @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+a {
+text-decoration: none;
+}
+
+li {
+list-style: none;
+}
+
+:root {
+--poppins: 'Poppins', sans-serif;
+--lato: 'Lato', sans-serif;
+
+--light: #F9F9F9;
+--blue: #3C91E6;
+--light-blue: #CFE8FF;
+--grey: #eee;
+--dark-grey: #AAAAAA;
+--dark: #342E37;
+--red: #DB504A;
+--yellow: #FFCE26;
+--light-yellow: #FFF2C6;
+--orange: #FD7238;
+--light-orange: #FFE0D3;
+}
+
+html {
+overflow-x: hidden;
+}
+
+body.dark {
+--light: #0C0C1E;
+--grey: #060714;
+--dark: #FBFBFB;
+}
+
+body {
+background: var(--grey);
+overflow-x: hidden;
+}
+
+
+
+
+
+
+
+
+/* CONTENT */
+#content {
+position: relative;
+width: calc(100% - 80px);
+left: 0px;
+transition: .3s ease;
+}
+
+
+
+
+
+
+
+/* MAIN */
+#content main {
+width: 100%;
+padding: 36px 24px;
+font-family: var(--poppins);
+max-height: calc(100vh - 56px);
+overflow-y: auto;
+}
+#content main .head-title {
+display: flex;
+align-items: center;
+justify-content: space-between;
+grid-gap: 16px;
+flex-wrap: wrap;
+}
+#content main .head-title .left h1 {
+font-size: 36px;
+font-weight: 600;
+margin-bottom: 10px;
+color: var(--dark);
+}
+#content main .head-title .left .breadcrumb {
+display: flex;
+align-items: center;
+grid-gap: 16px;
+}
+#content main .head-title .left .breadcrumb li {
+color: var(--dark);
+}
+#content main .head-title .left .breadcrumb li a {
+color: var(--dark-grey);
+pointer-events: none;
+}
+#content main .head-title .left .breadcrumb li a.active {
+color: var(--blue);
+pointer-events: unset;
+}
+#content main .head-title .btn-download {
+height: 36px;
+padding: 0 16px;
+border-radius: 36px;
+background: var(--blue);
+color: var(--light);
+display: flex;
+justify-content: center;
+align-items: center;
+grid-gap: 10px;
+font-weight: 500;
+}
+
+
+
+
+#content main .box-info {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+grid-gap: 24px;
+margin-top: 36px;
+}
+#content main .box-info li {
+padding: 24px;
+background: var(--light);
+border-radius: 20px;
+display: flex;
+align-items: center;
+grid-gap: 24px;
+}
+#content main .box-info li .bx {
+width: 80px;
+height: 80px;
+border-radius: 10px;
+font-size: 36px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+#content main .box-info li:nth-child(1) .bx {
+background: var(--light-blue);
+color: var(--blue);
+}
+#content main .box-info li:nth-child(2) .bx {
+background: var(--light-yellow);
+color: var(--yellow);
+}
+#content main .box-info li:nth-child(3) .bx {
+background: var(--light-orange);
+color: var(--orange);
+}
+#content main .box-info li .text h3 {
+font-size: 24px;
+font-weight: 600;
+color: var(--dark);
+}
+#content main .box-info li .text p {
+color: var(--dark);	
+}
+
+
+
+
+
+#content main .table-data {
+display: flex;
+flex-wrap: wrap;
+grid-gap: 24px;
+margin-top: 24px;
+width: 100%;
+color: var(--dark);
+}
+#content main .table-data > div {
+border-radius: 20px;
+background: var(--light);
+padding: 24px;
+overflow-x: auto;
+}
+#content main .table-data .head {
+display: flex;
+align-items: center;
+grid-gap: 16px;
+margin-bottom: 24px;
+}
+#content main .table-data .head h3 {
+margin-right: auto;
+font-size: 24px;
+font-weight: 600;
+}
+#content main .table-data .head .bx {
+cursor: pointer;
+}
+
+#content main .table-data .order {
+flex-grow: 1;
+flex-basis: 500px;
+}
+#content main .table-data .order table {
+width: 100%;
+border-collapse: collapse;
+}
+#content main .table-data .order table th {
+padding-bottom: 12px;
+font-size: 13px;
+text-align: left;
+border-bottom: 1px solid var(--grey);
+}
+#content main .table-data .order table td {
+padding: 16px 0;
+}
+#content main .table-data .order table tr td:first-child {
+display: flex;
+align-items: center;
+grid-gap: 12px;
+padding-left: 6px;
+}
+#content main .table-data .order table td img {
+width: 36px;
+height: 36px;
+border-radius: 50%;
+object-fit: cover;
+}
+#content main .table-data .order table tbody tr:hover {
+background: var(--grey);
+}
+#content main .table-data .order table tr td .status {
+font-size: 10px;
+padding: 6px 16px;
+color: var(--light);
+border-radius: 20px;
+font-weight: 700;
+}
+#content main .table-data .order table tr td .status.completed {
+background: var(--blue);
+}
+#content main .table-data .order table tr td .status.process {
+background: var(--yellow);
+}
+#content main .table-data .order table tr td .status.pending {
+background: var(--orange);
+}
+
+
+#content main .table-data .todo {
+flex-grow: 1;
+flex-basis: 300px;
+}
+#content main .table-data .todo .todo-list {
+width: 100%;
+}
+#content main .table-data .todo .todo-list li {
+width: 100%;
+margin-bottom: 16px;
+background: var(--grey);
+border-radius: 10px;
+padding: 14px 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+#content main .table-data .todo .todo-list li .bx {
+cursor: pointer;
+}
+#content main .table-data .todo .todo-list li.completed {
+border-left: 10px solid var(--blue);
+}
+#content main .table-data .todo .todo-list li.not-completed {
+border-left: 10px solid var(--orange);
+}
+#content main .table-data .todo .todo-list li:last-child {
+margin-bottom: 0;
+}
+/* MAIN */
+/* CONTENT */
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+#sidebar {
+  width: 200px;
+}
+
+#content {
+  width: calc(100% - 60px);
+  left: 200px;
+}
+
+#content nav .nav-link {
+  display: none;
+}
+}
+
+
+
+
+
+
+@media screen and (max-width: 576px) {
+#content nav form .form-input input {
+  display: none;
+}
+
+#content nav form .form-input button {
+  width: auto;
+  height: auto;
+  background: transparent;
+  border-radius: none;
+  color: var(--dark);
+}
+
+#content nav form.show .form-input input {
+  display: block;
+  width: 100%;
+}
+#content nav form.show .form-input button {
+  width: 36px;
+  height: 100%;
+  border-radius: 0 36px 36px 0;
+  color: var(--light);
+  background: var(--red);
+}
+
+#content nav form.show ~ .notification,
+#content nav form.show ~ .profile {
+  display: none;
+}
+
+#content main .box-info {
+  grid-template-columns: 1fr;
+}
+
+#content main .table-data .head {
+  min-width: 420px;
+}
+#content main .table-data .order table {
+  min-width: 420px;
+}
+#content main .table-data .todo .todo-list {
+  min-width: 420px;
+}
+}
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    background-color: #3498db;
+    border: 2px solid #2980b9;
+    border-radius: 5px;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+  }
+
+  .custom-button:hover {
+    background-color: #2980b9;
+    border-color: #3498db;
+    transform: scale(1.05);
+  }
+/* Add this CSS in your stylesheet or within a style tag in your HTML */
+
+/* Table styles */
+.table-data {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.order {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Header styles */
+.head {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.head h3 {
+  margin: 0;
+}
+
+/* Table header styles */
+thead {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+th {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Table body styles */
+tbody tr {
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* Alternate row colors for better readability */
+tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Cell styles */
+td {
+  padding: 10px;
+}
+
+/* Image styles */
+td img {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
+}
+
+/* Status styles */
+td .status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Define status colors */
+td .completed {
+  background-color: #28a745; /* Green for completed status */
+}
+
+/* Icons styles */
+i.bx {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #007bff; /* Blue color for icons */
+}
+
+/* Hover effect on icons */
+i.bx:hover {
+  color: #0056b3; /* Darker blue color on hover */
+}
+
+  </style>
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+        <h1 class="logo"><a>AUCTION HUB</a></h1>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li>
+              <a class="nav-link " href="/admin_dash">Home</a>
+            </li>
+
+
+            
+
+            <li class="dropdown">
+              <a><span class="text-light">VIEW</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li>
+                  <a href="/admin_view_seller">Seller</a>
+                </li>
+                <li>
+                  <a href="/admin_view_customer">Customer</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a class="nav-link" href="/">Logout</a>
+            </li>
+          </ul>
+
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    </header>
+
+   
+ 
+<section id="hero" class="d-flex align-items-center">
+  <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+    <h1>Welcome to Admin Dashboard</h1>
+    <h2>We are team  of AUCTIMO</h2>
+  </div>
+</section>
+  <section id="content">
+  <!-- MAIN -->
+  <main>
+    <div class="head-title">
+      <div class="left">
+        <h1>Dashboard</h1>
+        <ul class="breadcrumb">
+          <li>
+            <a href="#">Dashboard</a>
+          </li>
+          <li><i class='bx bx-chevron-right' ></i></li>
+          
+        </ul>
+      </div>
+
+    </div>
+
+    <ul class="box-info">
+      <li>
+        <i class='bx bxs-calendar-check' ></i>
+        <span class="text">
+          <h3>{{row_count3}}</h3>
+          <p>New Contracts</p>
+        </span>
+      </li>
+      <li>
+        <i class='bx bxs-calendar-check' ></i>
+        <span class="text">
+          <h3>{{row_count5}}</h3>
+          <p>New live auction request
+          {% if row_count5 > 0 %}
+           <a href="/view_liveauctionreq">check</a>
+          {% endif %}
+          </p>
+        </span>
+      </li>
+      <li>
+        <i class='bx bxs-group' ></i>
+        <span class="text">
+          <h3>{{row_count2}} Users</h3>
+          
+        </span>
+      </li>
+      <li>
+        <i  >
+          <img src="/static/images/offer.jpg" width="100">
+
+        </i>
+        <span class="text">
+          <h3>{{row_count4}}</h3>
+          <p>Total Offers</p>
+        </span>
+      </li>
+    </ul>
+
+
+    <div class="table-data">
+      <div class="order">
+        <div class="head">
+          <h3>Contracts </h3>
+          <i class='bx bx-search' ></i>
+          <i class='bx bx-filter' ></i>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Product Id</th>
+              <th>Name</th>
+              <th>Contract Type</th>
+              <th>Details</th>
+              <th>Starting Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for p in product %}
+            
+            <tr>
+              <td>{{p.id}} </td>
+              <td>
+                <img src="https://th.bing.com/th?id=OIP.WgLlsniXmGojM00fmNhKAgHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2">
+                <p>{{p.pname}} </p>
+              </td>
+              <td> {{p.pcategory}} </td>
+              <td> {{p.pdetails}} </td>
+              <td> {{p.price}} </td>
+              <td> {{p.productBidstatus}} </td>
+              <!--<td><span class="status completed">Completed</span></td>-->
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="order">
+        <div class="head">
+          <h3>Offers</h3>
+          <i class='bx bx-plus' ></i>
+          <i class='bx bx-filter' ></i>
+          
+        </div>
+        <table >
+          <thead>
+            <tr>
+              <th>Product Id</th>
+              <th>Bid Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for f in bid %}
+            <tr>
+              <td>
+                <img src="https://th.bing.com/th/id/OIP.RnBptL3uK7_jr5XQ-4WsXgHaHa?w=203&h=203&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+                <p>{{f.product_id}} </p>
+              </td>
+              <td> {{f.bidAmount}} </td>
+              <td> {{f.bidstatus}} </td>
+             
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+
+  </main>
+  <!-- MAIN -->
+</section>
+
+
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>AUCTIMO</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/day-multipurpose-html-template-for-free/ -->
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+  </body>
+</html>
+
+

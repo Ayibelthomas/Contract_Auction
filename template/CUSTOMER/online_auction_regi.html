@@ -1,0 +1,186 @@
+
+
+{% for message in messages %}
+  <script>
+    alert('{{message}}')
+  </script>
+{% endfor %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>CONTRACT AUCTION HUB</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/favicon.png' %}" rel="icon" />
+    <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i' %}" rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+    <style>
+    #hero {
+  width: 100%;
+  height: calc(100vh - 10px);
+  background: url("/static/images/banner.png") top center;
+  background-size: cover;
+  position: relative;
+}
+    </style>
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+        <h1 class="logo"><a>CONTRACT AUCTION HUB</a></h1>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+
+            <li>
+              <a class="nav-link" href="/customer_dash">Home</a>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/addProducts">Add Contract</a>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/viewProductStatus">View Contract</a>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/customer_profile">View Profile</a>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/chat">Chat</a>
+            </li>
+
+
+              <a class="nav-link" href="/">Logout</a>
+            </li>
+          </ul>
+
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+ 
+ 
+<section id="hero" class="d-flex align-items-center">
+  <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+    
+  <div class="container">
+    <br><br>
+    <h1 class="text-center m-3">request live auction</h1>
+    <div class="row justify-content-md-center">
+      <div class="col col-md-8 col-lg-6">
+        <form id="addProductForm" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="productName" class="text-light">Contract name</label>
+            <input type="text" class="form-control" name="pname" id="productName" placeholder="Contract Name" />
+          </div>
+
+          <div class="form-group">
+            <label for="productName" class="text-light">Contract Category</label>
+            <select name="pcategory"class="form-control" id="productName">
+              <option value="" selected>------Select------</option>
+              <option value="Technology_Services">Technology Services</option>
+              <option value="Construction_and_Engineering">Construction and Engineering</option>
+              <option value="Professional_Services">Professional Services</option>
+              <option value="Creative_and_Design">Creative and Design</option>
+              <option value="Event_Planning_and_Management">Event Planning and Management</option>
+              <option value="Facility_Management">Facility Management</option>
+              <option value="Other">Other</option>
+
+          </select>
+          </div>
+          <div class="form-group">
+            <label for="productName" class="text-light">Contract Details</label>
+            <input type="text" class="form-control" name="pdetails" id="productName" placeholder="Contract Details" />
+          </div>
+          
+          
+          <div class="form-group">
+            <label for="productName" class="text-light"> Date for auction</label>
+            <input type="date" class="form-control" name="bidDate" id="date" placeholder=""min="" />
+          </div><br>
+          <div class="form-group">
+            <label for="productName" class="text-light">Tine for auction</label>
+            <input type="time" class="form-control" name="bidTime" id="productName" placeholder="" />
+            
+                <select id="ampmSelect" name="ampmSelect">
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+                </select>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="productPrice" class="text-light">Email</label>
+            <input type="email" class="form-control" name="pemail" id="productPrice" placeholder="enter email" />
+          </div>
+          
+          <div class="form-group">
+            <label for="productPrice" class="text-light">Contract price</label>
+            <input type="number" class="form-control" name="price" id="productPrice" placeholder="enter price" />
+          </div>
+          <br>
+          <button id="btnSubmit" type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col col-md-8 col-lg-6">
+        <hr />
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+    <!-- ======= Footer ======= -->
+    
+    <!-- End Footer -->
+
+    
+    <!-- Vendor JS Files -->
+    <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script>
+      // Get today's date in the format YYYY-MM-DD
+      var today = new Date().toISOString().split('T')[0];
+      // Set the minimum date of the date picker to today
+      document.getElementById("date").setAttribute("min", today);
+  </script>
+  </body>
+</html>
